@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/site/posts/firstpost/</loc>
+    <lastmod>2020-05-31</lastmod>
+  </url>
+  
+  <url>
+    <loc>/site/about/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>/site/posts/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>/site/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>/site/page-list/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>/site/tags/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>/site/tags/personal/</loc>
+    <lastmod>2021-06-01</lastmod>
+  </url>
+</urlset>
