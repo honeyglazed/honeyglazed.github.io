@@ -5,7 +5,21 @@
   --darkgray: #333;
   --navy: #17050F;
   --blue: #082840;
-  --white: #fff;
+  --white: #e0fbfc;
+  --black: #293241;
+  --dark-text-base-color: #c7bebe;
+  --dark-text-link-blue: #ff5277;
+  --dark-text-link-blue-active: #ff2957;
+  --dark-black: #131418;
+  --dark-white: #eaeaea;
+  --dark-light: #1b1d25;
+  --dark-smoke: #4a4d56;
+  --dark-gray: #767f87;
+
+  --spacing-full: 30px;
+  --spacing-half: 15px;
+  --wide-size: 890px;
+  --narrow-size: 720px;
 }
 
 /* Global stylesheet */
@@ -15,11 +29,10 @@
 
 html,
 body {
-  padding: 0;
   margin: 0;
   font-family: -apple-system, system-ui, sans-serif;
-  color: var(--darkgray);
-  background-color: var(--white);
+  color: var(--dark-text-base-color);
+  background-color: var(--dark-black);
 }
 p:last-child {
   margin-bottom: 0;
@@ -34,20 +47,33 @@ p,
   line-height: 1.45;
 }
 a[href] {
-  color: var(--blue);
+  color: var(--dark-text-base-color);
+  text-decoration: none;
 }
+/*
 a[href]:visited {
   color: var(--navy);
 }
+*/
 main {
   padding: 1rem;
+  max-width: calc(var(--narrow-size) - var(--spacing-full) * 2);
+  margin-left: auto;
+  margin-right: auto;
 }
+/*
 main :first-child {
   margin-top: 0;
 }
+*/
 header {
-  border-bottom: 1px dashed var(--lightgray);
+  padding: calc(var(--spacing-half) - 15px);
+  border-bottom: 1px solid var(--dark-light);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: calc(var(--wide-size) - var(--spacing-full));
 }
+
 header:after {
   content: "";
   display: table;
@@ -134,7 +160,7 @@ code {
 .nav {
   padding: 0;
   list-style: none;
-  float: left;
+  float: right;
   margin-left: 1em;
 }
 .nav-item {
@@ -149,7 +175,68 @@ code {
   text-decoration: underline;
 }
 
+/* Bio */
+.bio {
+  display: flex;
+  min-height: 100px;
+  max-height: 100px;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.word-carousel {
+  font-size: 36px;
+}
+
+ul.reset,
+ul.reset li,
+ul.reset ul li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style-type: 0;
+}
+
+.word-carousel div {
+  overflow: hidden;
+  position: relative;
+  float: right;
+  height: 65px;
+  padding-top: 10px;
+  margin-top: -10px;
+}
+
+.word-carousel div ul {
+  padding-inline-start: 10px;
+}
+
+.word-carousel div li {
+  display: block;
+  height: 35px;
+  margin-bottom: 45px;
+}
+
+.flip2 { 
+  animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; 
+}
+
+@keyframes flip2 {
+  0% { margin-top: -180px; }
+  5% { margin-top: -90px;  }
+  50% { margin-top: -90px; }
+  55% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
+
 /* Posts list */
+.postlist-title {
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+}
 .postlist {
   list-style: none;
   padding: 0;
@@ -158,9 +245,10 @@ code {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  counter-increment: start-from -1;
-  line-height: 1.8;
+  line-height: 2.8;
+  border-top: 1px solid var(--dark-light);
 }
+/*
 .postlist-item:before {
   display: inline-block;
   pointer-events: none;
@@ -168,10 +256,11 @@ code {
   line-height: 100%;
   text-align: right;
 }
+*/
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
-  color: var(--darkgray);
+  padding-right: 20px;
 }
 .postlist-date {
   word-spacing: -0.5px;
@@ -179,9 +268,6 @@ code {
 .postlist-link {
   padding-left: .25em;
   padding-right: .25em;
-  text-underline-position: from-font;
-  text-underline-offset: 0;
-  text-decoration-thickness: 1px;
 }
 .postlist-item-active .postlist-link {
   font-weight: bold;
@@ -189,6 +275,14 @@ code {
 .tmpl-home .postlist-link {
   font-size: 1.1875em; /* 19px /16 */
   font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 8em;
+  margin-bottom: 2m;
+  opacity: 0.7;
+  font-size: 14px;
 }
 
 
@@ -213,7 +307,7 @@ a[href].post-tag:visited {
 }
 a[href].post-tag:hover,
 a[href].post-tag:focus {
-  background-color: var(--lightgray);
+  background-color: var(--dark-gray);
 }
 .postlist-item > .post-tag {
   align-self: center;

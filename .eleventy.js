@@ -60,6 +60,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
+  // `year` shortcode
+  eleventyConfig.addNunjucksShortcode("year", () => `${new Date().getFullYear()}`);
+
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
